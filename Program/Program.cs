@@ -4,10 +4,10 @@ class Program
     public static void Main(String[] args)
     {
 
-        Variable x = new Variable(1);
-        Variable y = new Variable(10);
+        Variable x = new Variable(2);
+        Variable y = new Variable(2);
 
-        var u = x * x;
+        var u = y / x;
 
         Console.WriteLine(u.Backward(x));
     }

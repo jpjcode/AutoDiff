@@ -6,7 +6,16 @@ using System.Threading.Tasks;
 
 namespace AutoDiff.Operator
 {
-    class LogOperator
+    class LogOperator : IOperator
     {
+        public double Diff(Expression u, Expression v, Expression independVar)
+        {
+            return v.Backward(independVar) / (Math.Log(u.Forward()) * v.Forward());
+        }
+
+        public double Forward(Expression u, Expression v)
+        {
+            return Math.Log(u.Forward(), v.Forward());
+        }
     }
 }

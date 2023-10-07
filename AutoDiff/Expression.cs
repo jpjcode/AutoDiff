@@ -40,7 +40,11 @@ namespace AutoDiff
 
         public static Equation Pow(Expression @base, Expression exponent)
         {
-            return new Equation(@base, exponent, new DivideOperator());
+            return new Equation(@base, exponent, new PowerOperator());
+        }
+        public static Equation Log(Expression @base, Expression exponent)
+        {
+            return new Equation(@base, exponent, new LogOperator());
         }
 
         public static bool operator ==(Expression left, Expression right)

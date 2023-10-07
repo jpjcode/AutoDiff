@@ -10,8 +10,8 @@ namespace AutoDiff.Operator
     {
         public double Diff(Expression u, Expression v, Expression independVar)
         {
-            
-            return 0;
+
+            return (u.Backward(independVar) * v.Forward() - u.Forward() * v.Backward(independVar)) / (u.Forward() * u.Forward());
         }
 
         public double Forward(Expression u, Expression v)

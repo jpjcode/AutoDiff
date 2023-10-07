@@ -10,7 +10,10 @@ namespace AutoDiff.Operator
     {
         public double Diff(Expression u, Expression v, Expression independVar)
         {
-            throw new NotImplementedException();
+            //Once I find better math I will find a way that is less computationally expensive
+
+            return 0;
+
         }
 
         public double Forward(Expression u, Expression v)
