@@ -24,63 +24,6 @@ namespace AutoDiff
             Value = value;
         }
 
-        public static Equation operator +(Variable left, Variable right)
-        {
-            return new Equation(left, right, new AddOperator());
-        }
-        public static Equation operator +(Expression left, Variable right)
-        {
-            return new Equation(left, right, new AddOperator());
-        }
-        public static Equation operator +(Variable left, Expression right)
-        {
-            return new Equation(left, right, new AddOperator());
-        }
-
-
-        public static Equation operator -(Variable left, Variable right)
-        {
-            return new Equation(left, right, new SubtractOperator());
-        }
-        public static Equation operator -(Expression left, Variable right)
-        {
-            return new Equation(left, right, new SubtractOperator());
-        }
-        public static Equation operator -(Variable left, Expression right)
-        {
-            return new Equation(left, right, new SubtractOperator());
-        }
-
-
-
-
-        public static Equation operator *(Variable left, Variable right)
-        {
-            return new Equation(left, right, new MultiplyOperator());
-        }
-        public static Equation operator *(Expression left, Variable right)
-        {
-            return new Equation(left, right, new MultiplyOperator());
-        }
-        public static Equation operator *(Variable left, Expression right)
-        {
-            return new Equation(left, right, new MultiplyOperator());
-        }
-
-
-        public static Equation operator /(Variable left, Variable right)
-        {
-            return new Equation(left, right, new DivideOperator());
-        }
-        public static Equation operator /(Expression left, Variable right)
-        {
-            return new Equation(left, right, new DivideOperator());
-        }
-        public static Equation operator /(Variable left, Expression right)
-        {
-            return new Equation(left, right, new DivideOperator());
-        }
-
 
 
         public override double Forward()

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AutoDiff.Operator;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,6 +17,30 @@ namespace AutoDiff
         {
             ID = id;
             id++;
+        }
+
+        public static Equation operator +(Expression left, Expression right)
+        {
+            return new Equation(left, right, new AddOperator());
+        }
+
+        public static Equation operator -(Expression left, Expression right)
+        {
+            return new Equation(left, right, new SubtractOperator());
+        }
+        public static Equation operator *(Expression left, Expression right)
+        {
+            return new Equation(left, right, new MultiplyOperator());
+        }
+
+        public static Equation operator /(Expression left, Expression right)
+        {
+            return new Equation(left, right, new DivideOperator());
+        }
+
+        public static Equation Pow(Expression @base, Expression exponent)
+        {
+            return new Equation(@base, exponent, new DivideOperator());
         }
 
         public static bool operator ==(Expression left, Expression right)

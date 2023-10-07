@@ -22,28 +22,6 @@ namespace AutoDiff
             Operator = @operator;
         }
 
-        public static Equation operator +(Equation left, Equation right)
-        {
-            return new Equation(left, right, new AddOperator());
-        }
-
-        public static Equation operator -(Equation left, Equation right)
-        {
-            return new Equation(left, right, new SubtractOperator());
-        }
-
-
-
-        public static Equation operator *(Equation left, Equation right)
-        {
-            return new Equation(left, right, new MultiplyOperator());
-        }
-
-        public static Equation operator /(Equation left, Equation right)
-        {
-            return new Equation(left, right, new DivideOperator());
-        }
-
         public override double Forward()
         {
             return Operator.Forward(U, V);
