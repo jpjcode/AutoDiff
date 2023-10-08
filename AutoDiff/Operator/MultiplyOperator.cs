@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AutoDiff.Operator.OperatorInterfaces;
 
 namespace AutoDiff.Operator
 {
-    internal class MultiplyOperator : IOperator
+    class MultiplyOperator : IOperator
     {
         public double Diff(Expression u, Expression v, Expression independVar)
         {

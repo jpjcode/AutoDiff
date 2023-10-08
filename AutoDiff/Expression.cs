@@ -46,6 +46,7 @@ namespace AutoDiff
         {
             return new Equation(@base, exponent, new LogOperator());
         }
+        
 
         public static bool operator ==(Expression left, Expression right)
         {

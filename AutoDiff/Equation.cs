@@ -1,4 +1,4 @@
-﻿using AutoDiff.Operator;
+﻿using AutoDiff.Operator.OperatorInterfaces;
 
 namespace AutoDiff
 {

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AutoDiff.Operator.OperatorInterfaces;
 
 namespace AutoDiff.Operator
 {
@@ -10,9 +11,23 @@ namespace AutoDiff.Operator
     {
         public double Diff(Expression u, Expression v, Expression independVar)
         {
-            //Once I find better math I will find a way that is less computationally expensive
-
-            return 0;
+            if(u == independVar && v != independVar)
+            {
+                return ((u.Forward()) * Math.Pow(u.Forward(), v.Forward() - 1)) * u.Backward(independVar);
+            }
+            
+            else if(u != independVar && v == independVar)
+            {
+                return (Math.Pow(u.Forward(), v.Forward()) * Math.Log(u.Forward())) * v.Backward(independVar);
+            }
+            else if (u == independVar && v == independVar)
+            {
+                return (Math.Pow(u.Forward(), u.Forward()) * (1 + Math.Log(u.Forward()))) * u.Backward(independVar);
+            }
+            else
+            {
+                return 0;
+            }
 
         }
 

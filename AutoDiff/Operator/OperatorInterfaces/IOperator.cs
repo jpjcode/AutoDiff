@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AutoDiff.Operator
+namespace AutoDiff.Operator.OperatorInterfaces
 {
     public interface IOperator
     {
